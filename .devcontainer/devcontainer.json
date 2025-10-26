@@ -1,0 +1,46 @@
+{
+    "name": "uv-app-test",
+    "dockerComposeFile": "../docker/docker-compose.yml",
+    "service": "backend-api",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "charliermarsh.ruff",
+                "kevinrose.vsc-python-indent",
+                "mosapride.zenkaku",
+                "ms-azuretools.vscode-docker",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "njpwerner.autodocstring",
+                "redhat.vscode-yaml",
+                "shardulm94.trailing-spaces",
+                "tamasfe.even-better-toml",
+                "yzhang.markdown-all-in-one"
+            ],
+            "settings": {
+                "editor.defaultFormatter": "charliermarsh.ruff",
+                "editor.formatOnSave": true,
+                "[python]": {
+                    "editor.codeActionsOnSave": {
+                        "source.fixAll": "explicit",
+                        "source.organizeImports": "explicit"
+                    },
+                    "editor.defaultFormatter": "charliermarsh.ruff",
+                    "editor.formatOnSave": true
+                },
+                "python.linting.enabled": true,
+                "python.linting.ruffEnabled": true,
+                "files.autoSave": "afterDelay",
+                "files.saveAll": true,
+                "ruff.lint.rules": ["E", "F", "W", "I"],
+                "ruff.lineLength": 120,
+                "ruff.fixAll": true,
+                "ruff.organizeImports": true,
+                "ruff.format": true
+            }
+        }
+    },
+    "postCreateCommand": "uv sync --frozen",
+    "postStartCommand": "uv run pre-commit install"
+}

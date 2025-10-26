@@ -1,0 +1,10 @@
+services:
+  backend-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: ["uv", "run", "fastapi", "dev", "--host", "0.0.0.0", "src/uv_docker_example"]
+    ports:
+      - "8000:8000"
+    volumes:
+      - ..:/workspace:cached
