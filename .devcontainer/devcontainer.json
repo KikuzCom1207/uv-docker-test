@@ -3,6 +3,9 @@
     "dockerComposeFile": "../docker/docker-compose.yml",
     "service": "backend-api",
     "workspaceFolder": "/workspace",
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
     "customizations": {
         "vscode": {
             "extensions": [
@@ -42,5 +45,6 @@
         }
     },
     "postCreateCommand": "uv sync --frozen",
-    "postStartCommand": "uv run pre-commit install"
+    "postStartCommand": "uv run pre-commit install",
+    "remoteUser": "coffee-blender"
 }
