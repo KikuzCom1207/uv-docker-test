@@ -3,6 +3,9 @@
     "dockerComposeFile": "../docker/docker-compose.yml",
     "service": "backend-api",
     "workspaceFolder": "/workspace",
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
     "customizations": {
         "vscode": {
             "extensions": [
