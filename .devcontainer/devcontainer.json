@@ -42,5 +42,6 @@
         }
     },
     "postCreateCommand": "uv sync --frozen",
-    "postStartCommand": "uv run pre-commit install"
+    "postStartCommand": "uv run pre-commit install",
+    "remoteUser": "coffee-blender"
 }
