@@ -56,9 +56,11 @@ jobs:
           docker image ls -a
 
       - name: Test command line
-        run: ./run.sh hello
+        run: docker run --rm -v $PWD:/workspace uv-docker-example:latest uv run hello
 
       - name: Test Docker compose
         run: |
           docker compose -f docker/docker-compose.yml up -d
+          sleep 5
+          curl -f http://localhost:8000
           docker compose -f docker/docker-compose.yml down
